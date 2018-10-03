@@ -43,7 +43,7 @@ int Pop(int Stack[], int&top)
 }
 
 void main()
-{ clrscr();     int n;
+{ clrscr();     int n; 
 	int Stack[size],Item,top=-1,res;char c;
 	system("cls");
 	do{
@@ -58,20 +58,26 @@ void main()
 			       cin>>Item;
 			       res=Push(Stack,top, Item);
 			       if(res==-1)
-				cout<<"\n Overflow No Item added to STACK:";
+				cout<<"\n Overflow. No Item added to STACK:";
 			       getch();
 			break;
 			case 2:
 			       cout<<"\n Confirm whether you wish to Pop ITEM[Y/N]:";
 			       cin>>c;
-			       if(c=='Y')
-			       {
-				res=Pop(Stack,top);
-			       if(res==-1)
-			       cout<<"\n Underflow No Items in Stack";
-			       else
-			       cout<<"\n Item Popped is :"<<res;
-			       }
+				switch(c)
+				{
+					case 'y':
+					case 'Y':
+						{
+							
+							res=Pop(Stack,top);
+							if(res==-1)
+						      	cout<<"\n Underflow No Items in Stack";
+						      	else
+						      	cout<<"\n Item Popped is :"<<res;						
+						}
+				}
+			      
 
 			       getch();
 
